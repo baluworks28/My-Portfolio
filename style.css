@@ -1,0 +1,76 @@
+/* Reset-ish */
+* { box-sizing: border-box; }
+
+/* Body & hero */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+  background: linear-gradient(135deg,#667eea,#764ba2);
+}
+
+/* Hero */
+.hero {
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  color: #fff;
+  text-align: center;
+  background: linear-gradient(135deg,#667eea,#764ba2);
+  animation: bgShift 10s infinite alternate;
+}
+.hero-inner { max-width: 900px; }
+.name { color: #ffd54f; }
+.tagline { margin: 8px 0 12px; font-size: 1.25rem; min-height: 30px; }
+.sub { opacity: 0.9; }
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  margin: 8px 8px 0 0;
+  background: linear-gradient(45deg,#ff6a00,#ee0979);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.btn:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0,0,0,.2); }
+.btn.outline { background: transparent; border: 2px solid rgba(255,255,255,.85); }
+
+/* Sections */
+.section { padding: 50px 18px; }
+.container { max-width: 1000px; margin: 0 auto; }
+
+/* Grid layouts */
+.grid { display: grid; gap: 18px; }
+.projects-grid { grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); }
+.skills-grid { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; }
+.project-card, .card { background:#fff; border-radius:12px; padding:18px; box-shadow: 0 8px 20px rgba(0,0,0,.08); }
+.card h3 { margin-top:0; }
+
+/* Internships & small screens */
+.internships .grid { grid-template-columns: 1fr; }
+@media(min-width:800px){
+  .internships .grid { grid-template-columns: repeat(2,1fr); }
+}
+
+/* Skills boxes */
+.skill { background:#fff; padding:16px; border-radius:10px; box-shadow:0 6px 16px rgba(0,0,0,.06); }
+
+/* Footer */
+footer { background:#111; color:#fff; padding:18px 0; text-align:center; }
+
+/* Animations */
+@keyframes bgShift {
+  0% { background: linear-gradient(135deg,#667eea,#764ba2); }
+  50% { background: linear-gradient(135deg,#ff6a00,#ee0979); }
+  100% { background: linear-gradient(135deg,#36d1dc,#5b86e5); }
+}
+
+/* Minor visual polish */
+a { color: #ff6a00; }
+.card a { color: #fff; background: linear-gradient(45deg,#36d1dc,#5b86e5); padding:8px 10px; border-radius:8px; text-decoration:none; display:inline-block; margin-top:8px; }
